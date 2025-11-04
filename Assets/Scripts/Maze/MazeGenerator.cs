@@ -22,6 +22,14 @@ public class MazeGenerator : MonoBehaviour
     private MazeCell[,] maze;
     private Stack<MazeCell> cellStack;
 
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
     void Start()
     {
         GenerateMaze();
